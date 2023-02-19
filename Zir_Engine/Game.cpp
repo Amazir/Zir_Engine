@@ -38,6 +38,11 @@ void Game::init(string title, int x, int y, int width, int height, bool fullscre
 		
 		// Synchronize bool with state
 		running = true;
+	
+		objManager = new GameObjectManager();
+
+		GameObject * p = new GameObject("assets/player/player.png", renderer);
+		objManager->add(p);
 	}
 	else
 		// Synchronize bool with state
@@ -80,6 +85,8 @@ void Game::update() {
 		Function for some stuff witch needs to be handled every tick
 
 	*/
+
+	objManager->update();
 }
 
 void Game::render() {
@@ -92,6 +99,8 @@ void Game::render() {
 
 	// Clear renderer
 	SDL_RenderClear(renderer);
+
+	objManager->render();
 
 	// Render current renderer
 	SDL_RenderPresent(renderer);

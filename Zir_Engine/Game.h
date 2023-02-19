@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-#include <SDL.h>
+#include "engine/z_GameObject.h"
+#include "engine/z_GameObjectManager.h"
 #undef main
 
 using namespace std;
@@ -23,6 +24,9 @@ public:
 
 private:
 	bool running; // Private bool with current state of game running
+	
+	GameObjectManager* objManager;
+	
 	SDL_Window* window; // Private window object
 	SDL_Renderer* renderer; // Private renderer object
 };
