@@ -130,6 +130,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="engine\input\z_InputManager.cpp" />
+    <ClCompile Include="engine\input\z_KeyEvent.cpp" />
     <ClCompile Include="engine\z_GameObject.cpp" />
     <ClCompile Include="engine\z_GameObjectManager.cpp" />
     <ClCompile Include="engine\z_TextureManager.cpp" />
@@ -137,6 +139,8 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="engine\input\z_InputManager.h" />
+    <ClInclude Include="engine\input\z_KeyEvent.h" />
     <ClInclude Include="engine\structs\z_Vector2.h" />
     <ClInclude Include="engine\z_GameObject.h" />
     <ClInclude Include="engine\z_GameObjectManager.h" />

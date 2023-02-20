@@ -3,11 +3,11 @@
 
 class GameObjectManager {
 public:
-	GameObjectManager();
-	~GameObjectManager();
+	GameObjectManager(); // Constructor
+	~GameObjectManager(); // Destructor
 
-	void render();
-	void update();
+	void render(); // Function for rendering game objects
+	void update(); // Function for updating game objects
 
 	void add(GameObject*); // Function for adding GameObjects into the loop
 	void del(GameObject*); // Function for deleting GameObjects from loop

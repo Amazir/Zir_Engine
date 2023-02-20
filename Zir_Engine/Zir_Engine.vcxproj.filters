@@ -22,6 +22,12 @@
     <Filter Include="Header Files\engine\structs">
       <UniqueIdentifier>{92abcd36-ff8e-4d7c-9152-c48f54434e67}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\input">
+      <UniqueIdentifier>{4d0b9d2f-b35f-4124-9a7c-a29ab61b612c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\input">
+      <UniqueIdentifier>{c0fb2c80-454f-4586-b855-1a44c8373190}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,6 +45,12 @@
     <ClCompile Include="engine\z_GameObjectManager.cpp">
       <Filter>Source Files\engine</Filter>
     </ClCompile>
+    <ClCompile Include="engine\input\z_KeyEvent.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\input\z_InputManager.cpp">
+      <Filter>Source Files\input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -47,13 +59,19 @@
     <ClInclude Include="engine\z_GameObject.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
-    <ClInclude Include="engine\z_TextureManager.h">
-      <Filter>Header Files\engine</Filter>
-    </ClInclude>
     <ClInclude Include="engine\structs\z_Vector2.h">
       <Filter>Header Files\engine\structs</Filter>
     </ClInclude>
     <ClInclude Include="engine\z_GameObjectManager.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\input\z_InputManager.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\input\z_KeyEvent.h">
+      <Filter>Header Files\input</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\z_TextureManager.h">
       <Filter>Header Files\engine</Filter>
     </ClInclude>
   </ItemGroup>

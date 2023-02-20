@@ -7,6 +7,11 @@ Game::~Game(){}
 
 bool Game::isRunning() {return running;}
 
+void moveLeft() {
+	cout << "moving left" << endl;
+}
+
+
 void Game::init(string title, int x, int y, int width, int height, bool fullscreen) {
 	/*
 
@@ -39,10 +44,16 @@ void Game::init(string title, int x, int y, int width, int height, bool fullscre
 		// Synchronize bool with state
 		running = true;
 	
+		// Initialize game object manager and input manager
 		objManager = new GameObjectManager();
+		inputManager = new InputManager();
 
-		GameObject * p = new GameObject("assets/player/player.png", renderer);
-		objManager->add(p);
+		KeyEvent* e = new KeyEvent(SDLK_0, 0, &moveLeft);
+		inputManager->addKeyPressEvent(e);
+		//delete e;
+
+		player = new GameObject("assets/player/player.png", renderer);
+		objManager->add(player);
 	}
 	else
 		// Synchronize bool with state
@@ -62,19 +73,24 @@ void Game::handle() {
 	
 	// Initialize 
 	SDL_PollEvent(&e);
-	switch (e.type) {
 
+	switch (e.type) {
 		// Check if SDL quits with error
-		case SDL_QUIT:
-			// Synchronize bool with state
-			running = false;
-			break;
+	case SDL_QUIT:
+		// Synchronize bool with state
+		running = false;
+		break;
+
+	case SDL_KEYDOWN:
+		inputManager->handle(e.key.keysym.sym, 0);
+
+		break;
 
 		// Default option
-		default:
-			/* Empty function because we want use 
-			it only when handler for it is declared */
-			break;
+	default:
+		/* Empty function because we want use
+		it only when handler for it is declared */
+		break;
 	}
 }
 

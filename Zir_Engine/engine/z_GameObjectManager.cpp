@@ -1,5 +1,4 @@
 #include "z_GameObjectManager.h"
-#include <iostream>
 
 GameObjectManager::GameObjectManager() {
 	objects = new GameObject * [1];
@@ -23,11 +22,11 @@ void GameObjectManager::update() {
 void GameObjectManager::add(GameObject * obj) {
 	obj->id = currentSize;
 	objects[currentSize] = obj;
-	std::cout << "adding " << currentSize << std::endl;
 	currentSize++;
 }
 
 void GameObjectManager::del(GameObject* obj) {
+	// TODO: Check is it working
 	for (int i = 0; i < currentSize; i++)
 		if (obj->id == objects[i]->id)
 			delete objects[i];
