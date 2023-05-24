@@ -83,7 +83,6 @@ void Game::handle() {
 
 	case SDL_KEYDOWN:
 		inputManager->handle(e.key.keysym.sym, 0);
-
 		break;
 
 		// Default option
